@@ -2,7 +2,7 @@ import express from "express"
 import fs from "fs"
 const app = express()
 
-app.use(express.json());
+app.use(express.static('public'));
 
 
 
@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 
-app.get('/files', function (req, res) {
+app.get("/files", function (req, res) {
 
   const date = new Date("2023-09-05"); // Replace this with your date
   const timestamp = date.getTime().toString();
@@ -31,7 +31,7 @@ app.get('/files', function (req, res) {
     console.log("keep time change");
   })
 
-  res.send(`${filename}.text`,"search")
+  res.send(`${filename}.text`)
 })
 
 app.listen(5000 ,()=>console.log("run"))
