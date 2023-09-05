@@ -10,7 +10,9 @@ app.use(express.json());
 
 
 
-app.get('/', function (req, res) {
+
+
+app.get('/files', function (req, res) {
 
   const date = new Date("2023-09-05"); // Replace this with your date
   const timestamp = date.getTime().toString();
@@ -29,7 +31,7 @@ app.get('/', function (req, res) {
     console.log("keep time change");
   })
 
-  res.send(`${filename}.text`)
+  res.send(`${filename}.text`,"search")
 })
 
 app.listen(5000 ,()=>console.log("run"))
