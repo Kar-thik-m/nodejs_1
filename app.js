@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 
-app.get('/files', function (req, res) {
+app.get('/', function (req, res) {
 
   const date = new Date("2023-09-05"); // Replace this with your date
   const timestamp = date.getTime().toString();
